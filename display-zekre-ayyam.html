@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Today's Date</title>
+<style>
+    body {
+        direction:rtl;
+    }
+</style>
+</head>
+<body>
+    <p id="clock"></p>
+    <script>
+        let today=new Date();
+        let year=today.getFullYear();
+        let month=today.getMonth()+1;
+        let date=today.getDate();
+        let day=today.getDay();
+        document.write(`${date}/${month}/${year}`);
+        let today_zekr='';
+        switch(day)
+        {
+            case 1: today_zekr="یاقاضی الحاجات";
+            break;
+            case 2: today_zekr="یا ارحم الراحمین";
+            break;
+            case 3: today_zekr="یا حی یا قیوم";
+            break;
+            case 4: today_zekr="لا اله الا الله الملک الحق المبین";
+            break;
+            case 5: today_zekr="اللهم صل علی محمد و آل محمد و عجل فرجهم";
+            break;
+            case 6: today_zekr="یارب العلمین";
+            break;
+            case 7: today_zekr="یاذالجلال والاکرام";
+            break;
+        }
+        document.write(`<h2>${today_zekr}</h2>`);
+        function clock() {
+           let now=new Date();
+           let h=now.getHours();
+           let m=now.getMinutes();
+           let s=now.getSeconds();
+           document.getElementById('clock').innerText=`${h}:${m}:${s}`;       
+        }
+        setInterval(clock,5000);
+    </script>
+</body>
+</html>
