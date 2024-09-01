@@ -36,7 +36,8 @@
             break;
             case 6: today_zekr="یاذالجلال والاکرام";
             break;
-            default:today_zekr=day;
+            default:today_zekr='err'+day;
+                break;
         }
         document.write(`<h2>${today_zekr}</h2>`);
         function clock() {
